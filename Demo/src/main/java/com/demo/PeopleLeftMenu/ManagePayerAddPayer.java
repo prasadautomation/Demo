@@ -139,7 +139,7 @@ public class ManagePayerAddPayer extends base{
 //			action.selectByValue(State,state);
 			Thread.sleep(3000);
 			action.selectByVisibleText(state,State);
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			action.type(Zipcode, zipcode);
 			Thread.sleep(1000);
 			action.selectByVisibleText(country, Country);

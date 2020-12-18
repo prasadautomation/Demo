@@ -22,7 +22,7 @@ public class ExtentManager {
 		extent.attachReporter(htmlReporter);
 		
 		extent.setSystemInfo("HostName", "MyHost");
-		extent.setSystemInfo("ProjectName", "1099cloud.com");
+		extent.setSystemInfo("ProjectName", "Tax1099.com");
 		extent.setSystemInfo("Tester", "Prasad K.K.D.V");
 		extent.setSystemInfo("OS", "Win10");
 		extent.setSystemInfo("Browser", "Chrome");

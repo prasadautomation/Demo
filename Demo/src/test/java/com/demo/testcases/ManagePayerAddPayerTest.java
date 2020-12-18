@@ -2,7 +2,9 @@ package com.demo.testcases;
 
 import java.util.HashMap;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -57,7 +59,7 @@ public class ManagePayerAddPayerTest extends base{
 	@Test(priority = 2,dataProvider ="addPayerein",dataProviderClass = DataProviders.class)
 	public void AddPayerTest(HashMap<String,String> hashMapValue) throws Throwable {
 		Log.startTestCase("addPayerTest");
-		WebElement element = (new WebDriverWait(getDriver(), 20)).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'People')]")));
+		WebElement element = (new WebDriverWait(getDriver(), 30)).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'People')]")));
 		 //ManagePeople=new ManagePeople();//*[@id='firstpane']/div[2]/p
 		getDriver().findElement(By.xpath("//p[contains(text(),'People')]")).click();
 		////*[@id="menu_body2"]/a[1]
@@ -88,7 +90,11 @@ public class ManagePayerAddPayerTest extends base{
 					//hashMapValue.get("lastfiling"),
 					hashMapValue.get("clientid")
 					); 
-	
+					ManagePayerAddPayer.validateAddEINpayer();
+					Thread.sleep(2000);
+					Alert alert = ((WebDriver) driver).switchTo().alert();
+					Thread.sleep(2000);
+					getDriver().findElement(By.xpath("//button[normalize-space()='Cancel']")).click();
 
 		 
 		// ManagePeople.ClickOnPeople();
